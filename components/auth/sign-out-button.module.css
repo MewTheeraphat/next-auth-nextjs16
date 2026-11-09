@@ -1,0 +1,20 @@
+.button {
+  min-height: 2.75rem;
+  border: 1px solid #d4d4d8;
+  border-radius: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgb(113 113 122 / 10%);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgb(79 70 229 / 35%);
+  outline-offset: 2px;
+}
