@@ -25,6 +25,24 @@ Open [http://localhost:3000](http://localhost:3000). Register at `/register`, si
 
 The authentication flow uses Auth.js Credentials with JWT sessions. Prisma persists users; passwords are stored as scrypt hashes. To update the generated Prisma client after changing the schema, run `pnpm db:generate`.
 
+## Admin dashboard
+
+The `/admin` route is available only to users with `isAdmin = true`. Other visitors are redirected to `/`. New users default to `isAdmin = false`.
+
+Apply the admin-role migration:
+
+```bash
+pnpm db:migrate --name add-user-is-admin
+```
+
+To grant the first administrator role, start Prisma Studio after applying migrations:
+
+```bash
+pnpm exec prisma studio
+```
+
+In the `User` table, set `isAdmin` to `true` for the intended account. Admins can then add users (with a temporary password), edit names, emails, and admin roles, or delete accounts. The dashboard prevents admins from removing their own access and from demoting or deleting the last administrator.
+
 ## Tests
 
 Run the unit tests with Vitest:

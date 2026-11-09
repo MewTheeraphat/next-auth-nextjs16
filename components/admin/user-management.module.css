@@ -1,0 +1,248 @@
+.management {
+  overflow: hidden;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.85rem;
+  background: #ffffff;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.sectionDescription {
+  margin: 0.35rem 0 0;
+  color: #52525b;
+  font-size: 0.9rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.dangerButton {
+  min-height: 2.5rem;
+  border: 0;
+  border-radius: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: #4338ca;
+  color: #ffffff;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: #3730a3;
+}
+
+.secondaryButton {
+  border: 1px solid #d4d4d8;
+  background: transparent;
+  color: inherit;
+}
+
+.secondaryButton:hover:not(:disabled) {
+  background: rgb(113 113 122 / 10%);
+}
+
+.dangerButton {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.dangerButton:hover:not(:disabled) {
+  background: #991b1b;
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled,
+.dangerButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.createForm {
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid #e4e4e7;
+  border-bottom: 1px solid #e4e4e7;
+  padding: 1.25rem 1.5rem;
+  background: #fafafa;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.field input,
+.tableInput {
+  min-width: 0;
+  min-height: 2.5rem;
+  border: 1px solid #d4d4d8;
+  border-radius: 0.45rem;
+  padding: 0.5rem 0.65rem;
+  background: #ffffff;
+  color: #18181b;
+  font: inherit;
+}
+
+.field input:focus-visible,
+.tableInput:focus-visible,
+.checkboxField input:focus-visible,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.dangerButton:focus-visible {
+  outline: 3px solid rgb(79 70 229 / 35%);
+  outline-offset: 2px;
+}
+
+.checkboxField {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.checkboxField input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #4338ca;
+}
+
+.tableScroller {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  border-top: 1px solid #e4e4e7;
+  padding: 0.85rem 1rem;
+  vertical-align: top;
+}
+
+.table th {
+  background: #fafafa;
+  color: #52525b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tableInput {
+  width: 100%;
+  min-width: 9rem;
+}
+
+.rowActions {
+  margin-bottom: 0.55rem;
+}
+
+.fieldError,
+.status {
+  display: block;
+  margin: 0.4rem 0 0;
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+.status {
+  color: #166534;
+}
+
+.emptyState {
+  padding: 2rem !important;
+  color: #52525b;
+  text-align: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 760px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    min-width: 46rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .management {
+    border-color: #3f3f46;
+    background: #18181b;
+  }
+
+  .sectionDescription,
+  .table th,
+  .emptyState {
+    color: #a1a1aa;
+  }
+
+  .createForm,
+  .table th {
+    border-color: #3f3f46;
+    background: #27272a;
+  }
+
+  .field input,
+  .tableInput {
+    border-color: #52525b;
+    background: #09090b;
+    color: #fafafa;
+  }
+
+  .secondaryButton {
+    border-color: #52525b;
+  }
+
+  .table th,
+  .table td {
+    border-color: #3f3f46;
+  }
+
+  .status {
+    color: #86efac;
+  }
+}
